@@ -9,6 +9,7 @@ app.listen(
 	() => console.log(`it's alive on http://localhost:${PORT}`)
 )
 
+// curl http://localhost:8080
 app.get('/tshirt', (req, res) => {
 	res.status(200).send({
 		tshirt: '👕',
@@ -17,6 +18,7 @@ app.get('/tshirt', (req, res) => {
 });
 
 // curl -d '{"logo":"🔥"}' -H "Content-Type: application/json" -X POST http://localhost:8080/tshirt/23
+// curl https://ck-rest-api.fly.dev/tshirt
 app.post('/tshirt/:id', (req, res) => {
 	const { id } = req.params;
 	const { logo } = req.body;
